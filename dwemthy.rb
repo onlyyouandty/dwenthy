@@ -25,8 +25,8 @@ class Creature
 	# 	should use the default number for each trait.
 	class_eval do
 		define_method( :initialize ) do
-			self.class.traits.eaach do |k,v|
-				initialize_variable_set("@#{k}", v)
+			self.class.traits.each do |k,v|
+				instance_variable_set("@#{k}", v)
 			end
 		end
 	end
@@ -35,7 +35,7 @@ class Creature
 end
 
 # Creature atrributes read-only
-traits :life, :strength, :chrisma, :weapon
+traits :life, :strength, :charisma, :weapon
 
 # This method applies a hit during a fight
 	def hit (damage)

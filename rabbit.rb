@@ -1,5 +1,7 @@
+require './dwemthy'
+
 class Rabbit < Creature
-	traits : bombs
+	traits :bombs
 
 	life 10
 	strength 2
@@ -20,9 +22,9 @@ class Rabbit < Creature
 	# will fly in the face of your opponent!!
 	def %( enemy )
 		lettuce = rand( charisma )
-		puts "Healthy lettuce gives you #{ lettuce } life points!!"
+		puts "[Healthy lettuce gives you #{ lettuce } life points!!]"
 		@life += lettuce
-		fight (enemy, 0)
+		fight( enemy, 0 )
 	end
 	# bombs, but you only have three!!
 	def *( enemy )
@@ -31,6 +33,6 @@ class Rabbit < Creature
 			return
 		end
 		@bombs -= 1
-		fight ( enemy, 86 )
+		fight( enemy, 86 )
 	end
 end
